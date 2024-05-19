@@ -1,0 +1,57 @@
+<div class="container">
+    <div [formGroup]="this.NewEmployeeForm">
+       
+        <div class="form-group">
+            <label for="firstName">First Name:</label>
+            <input type="text" class="form-control" id="firstName" formControlName="firstName">
+        </div>
+        <br>
+
+        <div class="form-group">
+            <label for="lastName">Last Name:</label>
+            <input type="text" class="form-control" id="lastName" formControlName="lastName">
+        <br>
+
+        <div class="form-group">
+            <label for="tz">ID:</label>
+            <input class="form-control" id="tz" formControlName="tz">
+        </div><br>
+
+        <div class="form-group">
+            <label for="dateOfBirth">Birth-Date: </label>
+            <input type="date" class="form-control" id="dateOfBirth" formControlName="dateOfBirth">
+        </div><br>
+
+        <div class="form-group mb-3">
+            <label class="form-label">Gender:</label>
+        
+            <label class="material-symbols-outlined clickMe" title="Man" (click)="selectGender(0)">
+                <input type="radio"  style="display: none">
+                Man
+            </label>
+        
+            <label class="material-symbols-outlined clickMe" title="Woman" (click)="selectGender(1)">
+                <input type="radio"  style="display: none">
+                Woman
+            </label>
+        
+            <input type="hidden" id="gender" formControlName="gender">
+        
+        </div>
+     
+
+        <div class="form-group">
+            <label for="beginningOfWork">Entry Date:</label>
+            <input type="date" id="beginningOfWork" class="form-control" formControlName="beginningOfWork">
+        </div><br>
+        <span (click)="addRoles()" class="material-symbols-outlined clickMe">
+            school
+        </span>
+        <br>
+        <div *ngFor="let i of range(1, countAdd)">
+            <app-add-role-to-employee [fromEdit]="fromEdit" (dataEvent)="addItem($event)"></app-add-role-to-employee>
+        </div>
+        <button type="submit" class="btn btn-outline-success" [disabled]="!this.NewEmployeeForm.valid"
+            (click)="addNewEmployee()"><span class="material-symbols-outlined">person_add</span></button>
+    </div>
+</div>

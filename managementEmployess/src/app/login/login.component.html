@@ -1,0 +1,12 @@
+<form [formGroup]="LoginForm" class="container mt-5">
+    <div class="form-group">
+        <label for="name">NAME:</label>  
+        <input type="text" id="name" formControlName="name" class="form-control">
+    </div>
+    <br/>
+    <div class="form-group">
+        <label for="Tz">ID</label>
+        <input id="Tz" class="form-control"  type="number" formControlName="tz">
+    </div>
+    <button (click)="getEmployee()" class="btn-primary">Login</button>
+</form>

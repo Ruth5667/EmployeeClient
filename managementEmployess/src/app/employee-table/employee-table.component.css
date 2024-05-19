@@ -1,0 +1,29 @@
+.clickMe{
+    cursor: pointer;
+}
+.search-field {
+    display: flex;
+    align-items: center;
+    background-color: #f0f0f0;
+    padding: 5px 10px; 
+    border-radius: 5px; 
+    border: 1px solid #ccc; 
+  }
+  
+  .search-field input {
+    width: 150px;
+    padding: 5px;
+    border-radius: 5px; 
+    border: 1px solid #ccc; 
+  }
+  .search-icon {
+    margin-left: 10px; 
+  }
+ 
+  
+  .mm{
+    margin-left: 1300px;
+    cursor: pointer;
+  
+  }
+  
